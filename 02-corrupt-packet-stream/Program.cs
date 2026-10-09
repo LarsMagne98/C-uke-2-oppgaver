@@ -5,6 +5,17 @@ foreach (string packet in packets)
 {
     // TODO: Bruk continue for CORRUPT.
     // TODO: Prosesser resten og øk processedCount.
+    if (packet == "CORRUPT")
+    {
+        continue;
+    }
+    else
+    {
+        Console.WriteLine($"Processed {packet}");
+        processedCount++;
+    }
 }
 
 Console.WriteLine($"Processed packets: {processedCount}");
+
+// Ferdig

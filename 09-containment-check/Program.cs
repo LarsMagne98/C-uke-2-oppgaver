@@ -12,5 +12,14 @@ else
 static bool CanContain(int capacity, int occupied, int incoming)
 {
     // TODO
+    if (occupied + incoming > capacity)
+    {
     return false;
+    }
+    else
+    {
+        return true;
+    }
 }
+
+// Ferdig.

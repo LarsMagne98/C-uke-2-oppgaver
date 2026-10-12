@@ -1,6 +1,8 @@
 List<string> beacons = new List<string>();
 
-while (true)
+bool running = true;
+
+void PrintMenu()
 {
     Console.WriteLine();
     Console.WriteLine("1 - Add beacon");
@@ -8,54 +10,78 @@ while (true)
     Console.WriteLine("3 - List beacons");
     Console.WriteLine("4 - Quit");
     Console.Write("Choice: ");
+}
 
-    string? choice = Console.ReadLine();
-
-    if (choice == "1")
+void AddBeacon(string? name)
+{
+    if (!string.IsNullOrWhiteSpace(name))
     {
-        Console.Write("Beacon name: ");
-        string? name = Console.ReadLine();
-        if (!string.IsNullOrWhiteSpace(name))
-        {
-            beacons.Add(name);
-            Console.WriteLine("Beacon added.");
-        }
-    }
-    else if (choice == "2")
-    {
-        Console.Write("Beacon name: ");
-        string? name = Console.ReadLine();
-        if (name is not null && beacons.Remove(name))
-        {
-            Console.WriteLine("Beacon removed.");
-        }
-        else
-        {
-            Console.WriteLine("Beacon not found.");
-        }
-    }
-    else if (choice == "3")
-    {
-        if (beacons.Count == 0)
-        {
-            Console.WriteLine("No beacons registered.");
-        }
-        else
-        {
-            foreach (string beacon in beacons)
-            {
-                Console.WriteLine($"- {beacon}");
-            }
-        }
-    }
-    else if (choice == "4")
-    {
-        break;
-    }
-    else
-    {
-        Console.WriteLine("Unknown choice.");
+        beacons.Add(name);
+        Console.WriteLine("Beacon added.");
     }
 }
 
-// TODO: Refaktorer den fungerende koden over til flere metoder.
+void RemoveBeacon(string? name)
+{
+    if (name is not null && beacons.Remove(name))
+    {
+        Console.WriteLine("Beacon removed.");
+    }
+    else
+    {
+        Console.WriteLine("Beacon not found.");
+    }
+}
+
+void PrintBeacons()
+{
+    if (beacons.Count == 0)
+    {
+        Console.WriteLine("No beacons registered.");
+    }
+    else
+    {
+        foreach (string beacon in beacons)
+        {
+            Console.WriteLine($"- {beacon}");
+        }
+    }
+}
+
+
+
+while (running)
+{
+    PrintMenu();
+
+    string? choice = Console.ReadLine();
+
+    switch (choice)
+    {
+        case "1":
+            Console.Write("Beacon name: ");
+            AddBeacon(Console.ReadLine());
+            break;
+
+        case "2":
+            Console.Write("Beacon name: ");
+            RemoveBeacon(Console.ReadLine());
+            break;
+
+        case "3":
+            PrintBeacons();
+            break;
+
+        case "4":
+            running = false;
+            break;
+
+        default:
+            Console.WriteLine("Unknown choice.");
+            break;
+        
+    }
+}
+
+
+// Ferdig. Lærerik oppgave!

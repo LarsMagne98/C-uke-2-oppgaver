@@ -1,3 +1,7 @@
+// Et lite konsollprogram som bruker metoder til å gjøre operasjoner.
+// Du kan legge til, fjerne eller skrive ut ting fra listen "beacons".
+
+
 List<string> beacons = new List<string>();
 
 bool running = true;
@@ -79,7 +83,7 @@ while (running)
         default:
             Console.WriteLine("Unknown choice.");
             break;
-        
+
     }
 }
 

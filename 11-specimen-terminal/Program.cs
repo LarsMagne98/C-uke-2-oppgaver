@@ -1,13 +1,13 @@
+// Et lite konsollprogram som lar deg legge til og fjerne ting fra en liste,
+// skriver ut hver ting i listen eller hvor mange ting listen inneholder.
+
+
 List<string> specimens = new List<string>();
 
 while (true)
 {
     Console.Write("Command (ADD/REMOVE/LIST/COUNT/QUIT): ");
     string? command = Console.ReadLine().ToUpper();
-
-    // TODO: Implementer kommandoene.
-    // Tips: specimens må IKKE opprettes på nytt inne i løkken.
-    
 
     if (command == "QUIT" || command == null)
     {
@@ -41,13 +41,13 @@ while (true)
             break;
 
         case "LIST":
-            if(specimens.Count == 0)
+            if (specimens.Count == 0)
             {
                 Console.WriteLine("The list is empty");
             }
             else
             {
-            specimens.ForEach(Console.WriteLine);
+                specimens.ForEach(Console.WriteLine);
             }
 
             break;
@@ -56,7 +56,7 @@ while (true)
             Console.WriteLine($"Count: {specimens.Count}");
 
             break;
-        
+
         default:
             Console.WriteLine("Unknown command. Please try again.");
 

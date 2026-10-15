@@ -1,14 +1,15 @@
-using System.Security.Permissions;
+// En foreach som sjekker om "KAPPA-9" finnes i kolleksjonen planetCodes.
+// Deretter skrives det i konsollen hvor mange planetkoder den inneholder,
+// første og siste planetkoden,
+// og så om "KAPPA-9" ble funnet.
 
 string[] planetCodes = { "ORION-4", "KAPPA-9", "LYRA-2", "NOVA-7", "VEGA-3" };
 bool found = false;
 
-// TODO: Skriv Length, første og siste element.
-// TODO: Finn KAPPA-9 med en løkke.
 
-foreach (var plant in planetCodes)
+foreach (var planet in planetCodes)
 {
-    if (plant == "KAPPA-9")
+    if (planet == "KAPPA-9")
     {
         found = true;
     }

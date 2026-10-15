@@ -1,10 +1,11 @@
+// En metode som tar inn flere integers og returnerer de ferdig utregnet.
+
 Console.WriteLine(CalculateFuel(10, 3, 5));
 Console.WriteLine(CalculateFuel(0, 4, 12));
 Console.WriteLine(CalculateFuel(7, 2, 0));
 
 static int CalculateFuel(int distance, int fuelPerUnit, int reserve)
 {
-    // TODO
     return distance * fuelPerUnit + reserve;
 }
 

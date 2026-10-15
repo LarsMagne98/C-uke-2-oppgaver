@@ -1,3 +1,7 @@
+// En liste med orderer.
+// foreach som sjekker om en ordre er "CANCELLED" og hopper over de.
+// og så skriver ut rekkefølgen på orderen og hva orderen gjelder.
+
 List<string> repairs = new List<string>
 {
     "Replace antenna",
@@ -11,7 +15,6 @@ int jobNumber = 1;
 
 foreach (string repair in repairs)
 {
-    // TODO: Hopp over kansellerte jobber og nummerer resten.
     if (repair.Contains("CANCELLED:"))
     {
         continue;

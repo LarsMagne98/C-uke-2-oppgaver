@@ -13,7 +13,7 @@ foreach (string packet in packets)
     }
     else
     {
-        Console.WriteLine($"Processed {packet}");
+        Console.WriteLine($"Processed: {packet}");
         processedCount++;
     }
 }

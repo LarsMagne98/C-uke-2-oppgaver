@@ -4,7 +4,7 @@
 string transmission = "AX?19??Q";
 int markerCount = 0;
 
-for (int i = 0; i < transmission.Length - 1; i++)
+for (int i = 0; i <= transmission.Length - 1; i++)
 {
     if (transmission[i] == '?')
     {

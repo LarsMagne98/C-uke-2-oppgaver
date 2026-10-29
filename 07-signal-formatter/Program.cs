@@ -7,7 +7,7 @@ Console.WriteLine(FormatSignal("cargo-deck"));
 
 static string FormatSignal(string source)
 {
-    return $"SIGNAL FROM: {source.ToUpper()}";
+    return $"[SIGNAL FROM: {source.ToUpper()}]";
 }
 
 // Ferdig.

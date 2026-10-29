@@ -15,7 +15,7 @@ int jobNumber = 1;
 
 foreach (string repair in repairs)
 {
-    if (repair.Contains("CANCELLED:"))
+    if (repair.StartsWith("CANCELLED:"))
     {
         continue;
     }

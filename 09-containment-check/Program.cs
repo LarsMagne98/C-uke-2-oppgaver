@@ -3,7 +3,8 @@
 // Så en if sjekk for å sjekke om accepted er true eller false,
 // og skriver så ut i konsollen om det var plass eller ikke.
 
-bool accepted = CanContain(10, 6, 4);
+bool accepted = CanContain(10, 0, 10);
+
 
 if (accepted)
 {

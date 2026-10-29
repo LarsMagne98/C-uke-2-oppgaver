@@ -7,14 +7,14 @@ List<string> specimens = new List<string>();
 while (true)
 {
     Console.Write("Command (ADD/REMOVE/LIST/COUNT/QUIT): ");
-    string? command = Console.ReadLine().ToUpper();
+    string? command = Console.ReadLine();
 
-    if (command == "QUIT" || command == null)
+    if (command == null || command.ToUpper() == "QUIT")
     {
         break;
     }
 
-    switch (command)
+    switch (command.ToUpper())
     {
         case "ADD":
             Console.WriteLine("Write the name you would like to add.");
